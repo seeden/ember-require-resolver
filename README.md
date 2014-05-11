@@ -6,7 +6,7 @@
 	$ npm install ember-resolver
 
 
-## Usage with node, webpack and bower
+## Usage with node, webpack and bower [Example](https://github.com/seeden/ember-resolver/tree/master/example)
 
 ### Folder structure:
 
