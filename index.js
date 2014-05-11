@@ -1,5 +1,9 @@
 var Ember = require('Ember');
 
+/**
+ * Resolver class
+ * @param {Object} options Additional parameters for resolver
+ */
 function Resolver(options) {
 	this.options = options || {};
 
@@ -17,6 +21,9 @@ function Resolver(options) {
 	this._prepareEmberResolver();
 }
 
+/**
+ * Prepare Ember resolver from defaultResolver
+ */
 Resolver.prototype._prepareEmberResolver = function () {
 	var self = this;
 
@@ -51,24 +58,35 @@ Resolver.prototype._prepareEmberResolver = function () {
 	});
 };
 
+/**
+ * Resolve module
+ * @param  {Object} parsedName Ember structure for resolving of modules
+ * @return {Object|null}            Ember module
+ */
 Resolver.prototype._resolve = function(parsedName) {
 	//if there no exists resolver
 	var type = parsedName.type;
 	var fullName = parsedName.fullNameWithoutType;
-
-	//resolve by user
-	return this._resolveByUser(type, fullName);
-};
-
-Resolver.prototype._resolveByUser = function(type, fullName) {
 	var path = this._preparePath(type, fullName);
+
 	return this.require(type, fullName, path);
 };
 
+/**
+ * Prepare basic path for resolve of module
+ * @param  {String} type     Type of Ember module (template, router, view)
+ * @param  {String} fullName Fullname of Ember module (main)
+ * @return {String}          Path for require module (templates/todos)
+ */
 Resolver.prototype._preparePath = function(type, fullName) {
 	return type + 's/' + fullName + this._getExt(type);
 };
 
+/**
+ * Get ext by type of module
+ * @param  {String} type Type of Ember module (template, router, view)
+ * @return {String}      Extension of file
+ */
 Resolver.prototype._getExt = function(type) {
 	var exts = this.exts;
 	if(exts[type]) {

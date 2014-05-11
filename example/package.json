@@ -1,0 +1,17 @@
+{
+    "name": "MyProject",
+    "version": "1.0.0",
+    "engines": {
+        "node": ">= 0.10.0"
+    },
+    "scripts": {
+        "postinstall": "node node_modules/bower/bin/bower install"
+    },
+    "dependencies": {
+        "bower": "~1.2.8",
+        "webpack": "~1.1.10",
+        "ember-templates-loader": "~0.2.1",
+        "script-loader": "~0.5.2",
+        "ember-resolver": "~1.0.1"
+    }
+}

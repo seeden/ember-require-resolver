@@ -1,6 +1,6 @@
 {
 	"name": "ember-resolver",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Universal simply extendable ember resolver",
 	"author": {
 		"name": "Zlatko Fedor",
