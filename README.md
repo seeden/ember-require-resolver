@@ -13,7 +13,7 @@
 	| - public/
 	| --- app/
 	| ------ templates/
-	| --------- todos.hbr
+	| --------- todos.hbs
 	| ------ routers/
 	| ---------- main.js
 	| ------ index.js
@@ -128,14 +128,14 @@ Content of routers/main.js:
 	module.exports = Router;
 
 
-Content of templates/todos.hbr:
+Content of templates/todos.hbs:
 
 	CONTENT OF TODOS :)	
 
 This resolver is able to resolve modules with predefined ember folder structure like such:
 
 	| - templates/
-	| --- index.hbr
+	| --- index.hbs
 	| - routers/
 	| --- main.js
 	| - views/
