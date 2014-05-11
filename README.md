@@ -9,6 +9,7 @@
 ## Usage with webpack
 
 Configuration of webpack:
+
 	{
 		entry:  './public/app',
 		output: {
