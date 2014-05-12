@@ -4,7 +4,6 @@ if (!Ember && typeof require === 'function') {
 	Ember = require('ember');
 }
 
-
 /**
  * Resolver class
  * @param {Object} options Additional parameters for resolver
@@ -55,11 +54,8 @@ Resolver.prototype._prepareEmberResolver = function () {
 
 	this.ember = Ember.DefaultResolver.extend({
     	resolveOther: resolve,
-    	resolveTemplate: resolve, 
+    	resolveTemplate: resolve 
   // 	resolveModel: resolve,
-    	normalize: function(fullName) {
-			return Ember.String.dasherize(fullName.replace(/\./g, '/'));
-		}
 	});
 };
 
@@ -84,7 +80,10 @@ Resolver.prototype._resolve = function(parsedName) {
  * @return {String}          Path for require module (templates/todos)
  */
 Resolver.prototype._preparePath = function(type, fullName) {
-	return type + 's/' + fullName + this._getExt(type);
+	fullName = Ember.String.dasherize(fullName.replace(/\./g, '/'))
+	var path = type + 's/' + fullName + this._getExt(type);
+
+	return path;
 };
 
 /**
@@ -101,4 +100,4 @@ Resolver.prototype._getExt = function(type) {
 	return this.defaultExt;
 };
 
-module.exports = Resolver;
+module.exports = return Resolver;
