@@ -1,4 +1,9 @@
-var Ember = require('Ember');
+var Ember = window && window.Ember;
+
+if (!Ember && typeof require === 'function') {
+	Ember = require('ember');
+}
+
 
 /**
  * Resolver class
