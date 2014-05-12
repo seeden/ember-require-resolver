@@ -100,4 +100,4 @@ Resolver.prototype._getExt = function(type) {
 	return this.defaultExt;
 };
 
-module.exports = return Resolver;
+module.exports = Resolver;
