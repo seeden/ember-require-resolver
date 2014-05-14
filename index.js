@@ -41,7 +41,7 @@ define(['ember'], function(Ember) {
 				return module
 			}
 
-			if (parsedName.root && parsedName.root &&.LOG_MODULE_RESOLVER) {
+			if (parsedName.root && parsedName.root.LOG_MODULE_RESOLVER) {
 	        	Ember.Logger.info('miss', parsedName.fullName);
 	      	}
 	      	
