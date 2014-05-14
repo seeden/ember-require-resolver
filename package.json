@@ -1,5 +1,5 @@
 {
-	"name": "ember-resolver",
+	"name": "ember-require-resolver",
 	"version": "1.2.0",
 	"description": "Universal simply extendable ember resolver",
 	"author": {
@@ -9,7 +9,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/seeden/ember-resolver.git"
+		"url": "git://github.com/seeden/ember-require-resolver.git"
 	},
 	"keywords": [
 		"ember",
@@ -29,6 +29,6 @@
 		"node": ">= 0.10.0"
 	},	
 	"bugs": {
-		"url": "https://github.com/seeden/ember-resolver/issues"
+		"url": "https://github.com/seeden/ember-require-resolver/issues"
 	}
 }
