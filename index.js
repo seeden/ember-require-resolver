@@ -50,8 +50,8 @@ define(['ember'], function(Ember) {
 
 		this.ember = Ember.DefaultResolver.extend({
 	    	resolveOther: resolve,
-	    	resolveTemplate: resolve 
-	  // 	resolveModel: resolve,
+	    	resolveTemplate: resolve,
+			resolveModel: resolve
 		});
 	};
 
