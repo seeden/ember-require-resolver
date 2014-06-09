@@ -17,6 +17,11 @@ define(['ember'], function(Ember) {
 			template: '.hbs'
 		};
 
+		//prepare path
+		this.operation = options.operation || function(fullName) {
+			return Ember.String.camelize(fullName).toLowerCase();
+		};
+
 		this._prepareEmberResolver();
 	}
 
@@ -76,7 +81,9 @@ define(['ember'], function(Ember) {
 	 * @return {String}          Path for require module (templates/todos)
 	 */
 	Resolver.prototype._preparePath = function(type, fullName) {
-		fullName = fullName.replace(/\./g, '/').toLowerCase();
+		fullName = fullName.replace(/\./g, '/');
+
+		fullName = this.operation(fullName);
 		var path = type + 's/' + fullName + this._getExt(type);
 
 		return path;
