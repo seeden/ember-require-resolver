@@ -19,7 +19,7 @@ define(['ember'], function(Ember) {
 
 		//prepare path
 		this.operation = options.operation || function(fullName) {
-			return Ember.String.camelize(fullName).toLowerCase();
+			return fullName.toLowerCase();
 		};
 
 		this._prepareEmberResolver();
