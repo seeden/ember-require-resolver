@@ -76,7 +76,7 @@ define(['ember'], function(Ember) {
 	 * @return {String}          Path for require module (templates/todos)
 	 */
 	Resolver.prototype._preparePath = function(type, fullName) {
-		fullName = Ember.String.dasherize(fullName.replace(/\./g, '/'))
+		fullName = fullName.replace(/\./g, '/').toLowerCase();
 		var path = type + 's/' + fullName + this._getExt(type);
 
 		return path;
