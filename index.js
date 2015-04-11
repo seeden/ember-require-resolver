@@ -41,21 +41,21 @@ define(['ember'], function(Ember) {
 			var module = self._resolve(parsedName);
 			if(module !== null) {
 				if (parsedName.root && parsedName.root.LOG_MODULE_RESOLVER) {
-	      			Ember.Logger.info('hit', parsedName.fullName);
-	    		}
+					Ember.Logger.info('hit', parsedName.fullName);
+				}
 				return module
 			}
 
-			if (parsedName.root && parsedName.root.LOG_MODULE_RESOLVER) {
-	        	Ember.Logger.info('miss', parsedName.fullName);
-	      	}
-	      	
+			if (parsedName.root && parsedName.root && parsedName.root.LOG_MODULE_RESOLVER) {
+				Ember.Logger.info('miss', parsedName.fullName);
+			}
+			
 			return resolved;
 		};
 
 		this.ember = Ember.DefaultResolver.extend({
-	    	resolveOther: resolve,
-	    	resolveTemplate: resolve,
+			resolveOther: resolve,
+			resolveTemplate: resolve,
 			resolveModel: resolve
 		});
 	};
